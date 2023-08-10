@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Mi primera extension",
+  "description": "Extension para imprimir automaticamente",
+  "version": "1.0",
+  
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"        
+      ],
+      "matches": [
+        "https://prontipagos.mx/*"        
+      ]
+    }
+  ],
+  "permissions": ["scripting" ]
+}
