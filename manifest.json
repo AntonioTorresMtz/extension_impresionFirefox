@@ -1,18 +1,21 @@
 {
-  "manifest_version": 2,
-  "name": "Mi primera extension",
-  "description": "Extension para imprimir automaticamente",
+  "manifest_version": 3,
+  "name": "Recargas",
+  "description": "Extensión para imprimir recargas",
   "version": "1.0",
-  
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
-      "js": [
-        "scripts/content.js"        
-      ],
-      "matches": [
-        "https://prontipagos.mx/*"        
-      ]
+      "js": ["scripts/content.js"],
+      "matches": ["https://app.prontipagos.mx/*"]
     }
   ],
-  "permissions": ["scripting" ]
+  "host_permissions": ["https://app.prontipagos.mx/*"],
+  "permissions": ["activeTab", "scripting"]
 }
